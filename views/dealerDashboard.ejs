@@ -1,0 +1,320 @@
+
+<body>
+
+    <ul>
+      <li><a onclick="location.href='/'"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li><a href="#"><i class="fa fa-bus" aria-hidden="true"></i></a></li>
+      <li class="active"><a href="#"><i class="fa fa-drivers-license" aria-hidden="true"></i></a></li>
+
+      <li><a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+      <li><a href="/logOut"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+      <li><a href="#"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+
+    </ul>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://use.fontawesome.com/e7cb172c8c.js"></script>
+  </body>
+  
+  <style>
+body, ul, li{
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 1000px;
+  background: #222;
+}
+ul{
+  background: rgb(128, 103, 103);
+  min-width: 80px;
+  height: 2657px;
+  box-sizing: border-box;
+  position: fixed;
+}
+li{
+  list-style-type: none;
+  padding: 10px 0 10px 0px;
+  border-bottom: 1px solid #222;
+  transform: translateY(55px);
+  text-align: center;
+  cursor: pointer;
+}
+a{
+  color: #aaa;
+  text-decoration: none;
+  padding: 10px 10px;
+}
+li.active{
+  background: rgb(53, 49, 49);
+  opacity: 1;
+}
+li:not(.active):hover {
+  background: #635b5b;
+}
+img{
+  width: 30px;
+  opacity: 0.6;
+}
+li:hover img, .active img{
+  opacity: 1;
+}
+  </style>
+  <script>
+      $('ul li').click(function(){
+    $('ul li').removeClass("active");
+    $(this).addClass("active");
+});
+  </script>
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<meta content="text/html;charset=utf-8"
+			http-equiv="Content-Type" />
+		<meta content="utf-8"
+			http-equiv="encoding" />
+		<!-- Jquery -->
+		<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		</script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+		<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
+		</script>
+
+		<!-- Personalized Includes -->
+		<!-- CSS -->
+		<style>
+			.center {
+				margin: 0 auto;
+				text-align: center;
+				justify-content: center;
+			}
+			.btn-div {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealer Dashboard</title>
+     <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/index.css" />
+    <style>
+        
+        .dash{
+            /* border: 1px solid black; */
+            box-shadow: 4px 4px 10px rgb(48, 48, 48);
+            width: 950px;
+            border-radius: 8px;
+        }
+        .up{
+            background-color: rgb(100, 92, 92);
+        }
+        .upr{
+            
+            
+            background: -webkit-linear-gradient(to right,rgb(80, 79, 79), #e8cbc0,);
+            background: linear-gradient(to right, rgb(102, 101, 101),#e8cbc0);
+            padding: 10px;
+            padding-left: 30px;
+            border-radius: 5px;
+            
+        }
+        .btn{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            box-shadow: 0px 0px 10px white;
+        }
+
+    </style>
+</head>
+
+
+
+
+<body>
+   
+  
+    <div class="container-fluid p-4" >
+        <div class="dash">
+            <div class="p-4 up d-flex">
+                <div class="col-6">
+                    <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSukWeqKUkbRISVlR3nDuo2QLsMxs6Mro0U-g&usqp=CAU" alt="IMG" height="250px" class="col-12"></center>
+                </div>
+                <div class="upr col-6"> 
+                                    <form method="post" action="/filterDealer/<%=email%>">
+                                        <div class="d-flex">
+                    <div class="form-group">
+                        <label for="">From State</label>
+                        <input type="text" name="state1"  onchange="search(this)" class="form-control" id="state1" placeholder="Maharastra">
+                    </div>
+                    <div class="form-group ml-5">
+                        <label for="">To State</label>
+                        <input type="text" name="state2" onchange="search(this)" class="form-control" id="state2" placeholder="West Bengal">
+                    </div>
+                    </div>
+                                        <div class="d-flex">
+                    <div class="form-group">
+                        <label for="">From City</label>
+                        <input type="text" name="city1" onchange="search(this)" class="form-control" id="city1" placeholder="Mumbai">
+                    </div>
+                    <div class="form-group ml-5">
+                        <label for="">To City</label>
+                        <input type="text" name="city2"onchange="search(this)"  class="form-control" id="city2" placeholder="Kolkata">
+                    </div>
+                    </div>
+                    
+                   
+                    <button type="submit"  class="btn">Search</button>
+                    </form>
+                    </div>
+            </div>
+            
+                
+            </div>
+        </div>
+       <!-- For demo purpose -->
+<p>
+    <!DOCTYPE html>
+    <html>
+    
+    <head>
+      
+        <p2>
+    
+        </p2>
+      <head>
+      <style>
+      p.center {
+        text-align: center;
+        color: rgb(47, 31, 135);
+      }
+      
+      p.large {
+        font-size: 300%;
+      }
+      </style>
+      </head>
+      <body>
+        <p3>
+    
+        </p3>
+      
+      <h1 class="center"></h1>
+      <p class="center"></p>
+      <font face="Roboto" size="20px" color="#0000">---------List of Drivers Available Through These Routes-----------</font>
+      
+      </body>
+      </html>
+</p>
+
+<div class="container">
+    <div id="default">
+  <div class="row text-center">
+
+      <!-- Team item -->
+      
+      <%for(var i=0;i<td.length;i++){%>
+      <div id="<%=i%>" class="col-xl-3 col-sm-6 mb-5">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://th.bing.com/th?q=Auto+Driver+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.5&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=strict&t=1&mw=247" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+              <h5 class="mb-0">Driver name: <%=td[i].driver_name%> </h5><span class="small text-uppercase text-muted">Deatils</span>
+              <h6>Age: <%=td[i].driver_age%></h6>
+              <h6>Truck Number: <%=td[i].driver_number%></h6>
+              <h6>Truck Capacity: <%=td[i].driver_truckcapacity%></h6>
+              <h6>Transporter Name: <%=td[i].driver_transportername%></h6>
+              <h6>Driving Experience: <%=td[i].driver_experience%></h6>
+              <h6>Visiting city 1: <%=td[i].city1%></h6>
+              <h6>Visiting city 2: <%=td[i].city2%></h6>
+              <h6>Visiting city 3: <%=td[i].city3%></h6>
+                <form action ='/btn' method ='post'>
+                    <button type='submit' onclick="myfunction()"  name='btn' class ='btn' value='<%=td[i].driver_email%>'>Book Know</button>
+                  </form>
+              <ul class="social mb-0 list-inline mt-3">
+                   
+                  <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-phone"></i></a></li>
+                  <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-envelope"></i></a></li>
+              </ul>
+          </div>
+      </div>
+      <%}%><!-- End -->
+  </div>
+  </div>
+
+<style>
+   
+  /*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+body {
+    background: #e8cbc0;
+    background: -webkit-linear-gradient(to right, #e8cbc0, rgba(61, 51, 119, 0.158));
+    background: linear-gradient(to right, #e8cbc0, rgba(66, 61, 122, 0.377));
+    min-height: 100vh;
+}
+
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(138, 180, 130);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+    background: rgb(193, 204, 128);
+    text-decoration: none;
+    color: #555;
+}
+</style>
+      
+  </div>
+</div>
+    <script>
+    function myfunction(){
+        alert('successfully Booked');
+    }
+    
+    
+</script>
+
+</body>
+</html>
+
+	</body>
+</html>

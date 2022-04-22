@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+    <p2>
+
+    </p2>
+  <head>
+  <style>
+  p.center {
+    text-align: center;
+    color: red;
+  }
+  
+  p.large {
+    font-size: 300%;
+  }
+  </style>
+  </head>
+  <html>
+	<head>
+		
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<meta content="text/html;charset=utf-8"
+			http-equiv="Content-Type" />
+		<meta content="utf-8"
+			http-equiv="encoding" />
+		<!-- Jquery -->
+		<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+		</script>
+
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+		<script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
+		</script>
+
+		<!-- Personalized Includes -->
+		<!-- CSS -->
+		<style>
+			.center {
+				margin: 0 auto;
+				text-align: center;
+				justify-content: center;
+			}
+			.btn-div {
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="modal fade" id="main-modal">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content">
+					<!-- Modal Header -->
+					<div class="modal-header"
+						id="modal-header">
+						<h4 class="modal-title"
+							id="modal-title">
+						Are You Sure You Want to Logout?
+						</h4>
+						<button type="button"
+								class="close"
+								data-dismiss="modal">
+							×
+						</button>
+					</div>
+
+					<!-- Modal body -->
+					<div class="modal-body" id="modal-body">
+					You have to Login again using your registerd email!!
+					</div>
+
+					<!-- Modal footer -->
+					<div class="modal-footer" id="modal-footer">
+						
+
+						<!--New Button declared here...-->
+					<a href="/logout">	YES
+            </a>
+           
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="center btn-div">
+			<div>
+				
+			</div>
+			<br />
+			<button class="btn btn-success"
+					data-toggle="modal"
+					data-target="#main-modal">
+				logout
+			</button>
+      <a class="btn btn-success" href="/">
+
+    Home
+  </a>
+		</div>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+  <body>
+    
+  
+  <h1 class="center"></h1>
+  <p class="center"></p>
+
+  
+  </body>
+  </html>
+  
+
+  <div class="container">
+    <h2 class="title">
+      <span class="title-word title-word-1">List of Dealers</span>
+      <span class="title-word title-word-2"> who have</span>
+      <span class="title-word title-word-3">booked</span>
+      <span class="title-word title-word-4">you.</span>
+    </h2>
+  </div>
+  
+  
+  
+  <style>
+    .title-word {
+  animation: color-animation 4s linear infinite;
+}
+
+.title-word-1 {
+  --color-1: #DF8453;
+  --color-2: #3D8DAE;
+  --color-3: #E4A9A8;
+}
+
+.title-word-2 {
+  --color-1: #DBAD4A;
+  --color-2: #ACCFCB;
+  --color-3: #17494D;
+}
+
+.title-word-3 {
+  --color-1: #ACCFCB;
+  --color-2: #E4A9A8;
+  --color-3: #ACCFCB;
+}
+
+.title-word-4 {
+  --color-1: #3D8DAE;
+  --color-2: #DF8453;
+  --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+  0%    {color: var(--color-1)}
+  32%   {color: var(--color-1)}
+  33%   {color: var(--color-2)}
+  65%   {color: var(--color-2)}
+  66%   {color: var(--color-3)}
+  99%   {color: var(--color-3)}
+  100%  {color: var(--color-1)}
+}
+
+/* Here are just some visual styles. 🖌 */
+
+.container {
+  display: grid;
+  place-items: center;  
+  text-align: center;
+  height: 80vh
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 2.5vw;
+  text-transform: uppercase;
+}
+  </style>
+  
+  <div class="container">
+
+    <% for(var i=0;i<dealers.length;i++){%>
+      <div class="card">
+        <div class="box">
+          <div class="container"><img
+              src="https://th.bing.com/th/id/OIP.oCv1YArOEO74WHNQgaWnuwHaFj?w=256&h=192&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+              width="90%">
+
+            <table>
+              <tr>
+                <th>Name: </th>
+                <td><%=dealers[i].name%></td>
+              <tr>
+                <th>Mobile: </th>
+                <td><%=dealers[i].mobile%></td>
+              </tr>
+              <tr>
+                <th>Nature: </th>
+                <td><%=dealers[i].natureOfMaterial%></td>
+              </tr>
+              <tr>
+                <th>Weight: </th>
+                <td><%=dealers[i].weightOfMaterial%></td>
+              </tr>
+              <tr>
+                <th>Quantity: </th>
+                <td><%=dealers[i].quantity%></td>
+              </tr>
+              <tr>
+                <th>State: </th>
+                <td><%=dealers[i].state%></td>
+              </tr>
+              <tr>
+                <th>City: </th>
+                <td><%=dealers[i].city%></td>
+              </tr>
+              <tr>
+                <th>
+                  Email: 
+                </th>
+                <td>
+                <a href="mailto:<%=dealers[i].email%>" style="color:goldenrod"></style>
+                  <%=dealers[i].email%>
+              </a></td>
+              </tr>
+              <!-- <tr>
+                <th >Email: </th>
+                <td><%=dealers[i].email%></td>
+              </tr> -->
+              </tr>
+            </table>
+            
+          
+            
+            
+            
+            <!-- <a href="mailto:<%=dealers[i].email%>"> Email</a> -->
+          </div>
+        </div>
+      </div>
+      <%}%>
+
+  </div>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      /* background-image: url(); */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      background: #452435;
+      background: -webkit-linear-gradient(to right, #3d4e3e, rgba(43, 61, 48, 0.158));
+      background: linear-gradient(to right, #111e18, rgba(41, 40, 62, 0.377));
+
+    }
+
+    body .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 40px 0;
+    }
+
+    body .container .card {
+      position: relative;
+      min-width: 330px;
+      height: 480px;
+      box-shadow: inset 5px 5px 5px rgba(32, 194, 32, 0.2),
+        inset -5px -5px 15px rgba(235, 232, 232, 0.578),
+        5px 5px 15px rgba(30, 29, 39, 0.544), -5px -5px 15px rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      margin: 30px;
+      transition: 0.5s;
+    }
+
+    body .container .card:nth-child(1) .box .content a {
+      background: #2196f3;
+    }
+
+    body .container .card:nth-child(2) .box .content a {
+      background: #e91e63;
+    }
+
+    body .container .card:nth-child(3) .box .content a {
+      background: #23c186;
+    }
+
+    body .container .card .box {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      background: #982121db;
+      background: -webkit-linear-gradient(to right, #903333, rgba(43, 61, 48, 0.158));
+      background: linear-gradient(to right, #312e5d, rgba(41, 40, 62, 0.377));
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+
+    body .container .card .box:hover {
+      transform: translateY(-90px);
+    }
+
+    body .container .card .box:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: rgba(107, 165, 219, 0.03);
+    }
+
+    body .container .card .box .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    body .container .card .box .content h2 {
+      position: absolute;
+      top: -10px;
+      right: 30px;
+      font-size: 8rem;
+      color: rgba(255, 255, 255, 0.1);
+    }
+
+    body .container .card .box .content h3 {
+      font-size: 1.8rem;
+      color: #fff;
+      z-index: 1;
+      transition: 0.5s;
+      margin-bottom: 15px;
+    }
+
+    body .container .card .box .content p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.9);
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    body .container .card .box .content a {
+      position: relative;
+      display: inline-block;
+      padding: 8px 20px;
+      background: black;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      margin-top: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      transition: 0.5s;
+    }
+
+    body .container .card .box .content a:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+      background: #fff;
+      color: #000;
+    }
+  </style>
+
+  
