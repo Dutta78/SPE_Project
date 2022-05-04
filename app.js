@@ -95,29 +95,11 @@ const getListDrivers = async () => {
 
 getListDrivers();
 
-
-// console.log(drivers)
-// const Item2 = mongoose.model("Item2" , itemschema);
-// const Item3 = mongoose.model("Item3" , itemschema);
-// const Item4 = mongoose.model("Item4" , itemschema);
-
-// const dealerData =new  mongoose.model("stateTable", dealerSchema);
-
-/*var transporter = nodemailer.createTransport({
-  service: "",
-  auth: {
-    user: "kapilmehta634@gmail.com",
-    pass: "Kapil@12345",
-  },
-});*/
-
 const stateTable = new mongoose.model("stateTable", listSchema);
 var states=[];
 const getList = async () => {
   try {
     const result = await stateTable
-      // .find({name:{$in:["anshu","ankit"]},number:{$gt:21}})
-      // .find({$or:[{name:"anshu"},{number:{$gt:21}}]})
       .find();
     // console.log(result);
     states = result;
