@@ -5,13 +5,9 @@ const session = require("express-session");
 
 const mongoose = require("mongoose");
 const port = 8000;
-//var nodemailer = require("nodemailer");
-//var smtpTransport = require("nodemailer-smtp-transport");
+
 const path = require("path");
-// const port = process.env.PORT || 8000;
-//var nodemailer = require('nodemailer');
-//var smtpTransport = require('nodemailer-smtp-transport');
-// const path = require("path");
+
 const { traceDeprecation } = require("process");
 const { json } = require("express");
 app.use(express.urlencoded({ extended: false }));
@@ -455,31 +451,7 @@ router.post("/driver_login3", function (req, res) {
   var otp2 = otp.toString();
   sessionId = req.session;
   sessionId.tempDriverEmail=email;
-  /*var transporter = nodemailer.createTransport(
-    smtpTransport({
-      service: "gmail",
-      host: "smtp.gmail.com",
-      auth: {
-        user: "kapilmehta634@gmail.com",
-        pass: "Kapil@12345",
-      },
-    })
-  );
-  var mailOptions = {
-    from: "kapilmehta634@gmail.com",
-    to: email,
-    subject: "OTP",
-    text: "OTP = " + otp2,
-  };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
-  res.redirect("/otp3");*/
 });
 router.post("/dealer_login3", function (req, res) {
    email4 = req.body.email;
@@ -487,31 +459,7 @@ router.post("/dealer_login3", function (req, res) {
   var otp2 = otp.toString();
   sessionId = req.session;
   sessionId.tempDealerEmail=email4;
-  /*
-  var transporter = nodemailer.createTransport(
-    smtpTransport({
-      service: "gmail",
-      host: "smtp.gmail.com",
-      auth: {
-        user: "kapilmehta634@gmail.com",
-        pass: "Kapil@12345",
-      },
-    })
-  );
-  var mailOptions = {
-    from: "kapilmehta634@gmail.com",
-    to: email4,
-    subject: "OTP",
-    text: "OTP = " + otp2,
-  };
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });*/
+  
   res.redirect("/otp");
 });
 
