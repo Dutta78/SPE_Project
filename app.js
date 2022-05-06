@@ -4,16 +4,16 @@ const cors = require("cors");
 const session = require("express-session");
 
 const mongoose = require("mongoose");
-<<<<<<< HEAD
+
 const port = 8001;
 
 const path = require("path");
-=======
-const port = 8000;
+//=======
+//const port = 8000;
 
-const path = require("path");
+//const path = require("path");
 
->>>>>>> 5330824c28247f7d4cd7c765779145b82fae2022
+//>>>>>>> 5330824c28247f7d4cd7c765779145b82fae2022
 const { traceDeprecation } = require("process");
 const { json } = require("express");
 app.use(express.urlencoded({ extended: false }));
