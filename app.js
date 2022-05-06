@@ -4,9 +4,16 @@ const cors = require("cors");
 const session = require("express-session");
 
 const mongoose = require("mongoose");
+<<<<<<< HEAD
 const port = 8001;
 
 const path = require("path");
+=======
+const port = 8000;
+
+const path = require("path");
+
+>>>>>>> 5330824c28247f7d4cd7c765779145b82fae2022
 const { traceDeprecation } = require("process");
 const { json } = require("express");
 app.use(express.urlencoded({ extended: false }));
@@ -444,7 +451,11 @@ router.post("/driver_login3", function (req, res) {
   var otp2 = otp.toString();
   sessionId = req.session;
   sessionId.tempDriverEmail=email;
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 5330824c28247f7d4cd7c765779145b82fae2022
 });
 router.post("/dealer_login3", function (req, res) {
    email4 = req.body.email;
@@ -452,31 +463,7 @@ router.post("/dealer_login3", function (req, res) {
   var otp2 = otp.toString();
   sessionId = req.session;
   sessionId.tempDealerEmail=email4;
-  /*
-  var transporter = nodemailer.createTransport(
-    smtpTransport({
-      service: "gmail",
-      host: "smtp.gmail.com",
-      auth: {
-        user: "kapilmehta634@gmail.com",
-        pass: "Kapil@12345",
-      },
-    })
-  );
-  var mailOptions = {
-    from: "kapilmehta634@gmail.com",
-    to: email4,
-    subject: "OTP",
-    text: "OTP = " + otp2,
-  };
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });*/
+  
   res.redirect("/otp");
 });
 
