@@ -4,14 +4,9 @@ const cors = require("cors");
 const session = require("express-session");
 
 const mongoose = require("mongoose");
-const port = 8000;
-//var nodemailer = require("nodemailer");
-//var smtpTransport = require("nodemailer-smtp-transport");
+const port = 8001;
+
 const path = require("path");
-// const port = process.env.PORT || 8000;
-//var nodemailer = require('nodemailer');
-//var smtpTransport = require('nodemailer-smtp-transport');
-// const path = require("path");
 const { traceDeprecation } = require("process");
 const { json } = require("express");
 app.use(express.urlencoded({ extended: false }));
@@ -240,8 +235,7 @@ router.get("/dealerDasboard/:email", async (req, res) =>{
   const email = req.params.email;
   try {
     const result = await dealerData
-      // .find({name:{$in:["anshu","ankit"]},number:{$gt:21}})
-      // .find({$or:[{name:"anshu"},{number:{$gt:21}}]})
+
       .find({ email: email });
     // console.log(result);
     
@@ -252,8 +246,7 @@ router.get("/dealerDasboard/:email", async (req, res) =>{
   }
    try {
      const result = await Driver
-       // .find({name:{$in:["anshu","ankit"]},number:{$gt:21}})
-       // .find({$or:[{name:"anshu"},{number:{$gt:21}}]})
+  
        .find();
       // console.log(result);
 
@@ -297,8 +290,7 @@ router.post("/filterDealer/:email", async (req, res) =>{
   const email = req.params.email;
   try {
     const result = await dealerData
-      // .find({name:{$in:["anshu","ankit"]},number:{$gt:21}})
-      // .find({$or:[{name:"anshu"},{number:{$gt:21}}]})
+
       .find({ email: email });
     // console.log(result);
     
@@ -309,8 +301,7 @@ router.post("/filterDealer/:email", async (req, res) =>{
   }
    try {
      const result = await Driver
-       // .find({name:{$in:["anshu","ankit"]},number:{$gt:21}})
-       // .find({$or:[{name:"anshu"},{number:{$gt:21}}]})
+
        .find();
       // console.log(result);
 
@@ -376,8 +367,7 @@ router.get("/driverDashboard/:email", async (req, res) =>{
   
   try {
     const result = await Driver2
-      // .find({name:{$in:["anshu","ankit"]},number:{$gt:21}})
-      // .find({$or:[{name:"anshu"},{number:{$gt:21}}]})
+
       .find({driver_email:email});
     // console.log(result);
     fdealers = result;
@@ -393,8 +383,7 @@ router.get("/driverDashboard/:email", async (req, res) =>{
      console.log("ff" + dealer_e);
      try {
        const result = await dealerData
-         // .find({name:{$in:["anshu","ankit"]},number:{$gt:21}})
-         // .find({$or:[{name:"anshu"},{number:{$gt:21}}]})
+
          .find({ email: dealer_e });
        // console.log(result);
        dealer2 = result;
@@ -455,31 +444,7 @@ router.post("/driver_login3", function (req, res) {
   var otp2 = otp.toString();
   sessionId = req.session;
   sessionId.tempDriverEmail=email;
-  /*var transporter = nodemailer.createTransport(
-    smtpTransport({
-      service: "gmail",
-      host: "smtp.gmail.com",
-      auth: {
-        user: "kapilmehta634@gmail.com",
-        pass: "Kapil@12345",
-      },
-    })
-  );
-  var mailOptions = {
-    from: "kapilmehta634@gmail.com",
-    to: email,
-    subject: "OTP",
-    text: "OTP = " + otp2,
-  };
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent: " + info.response);
-    }
-  });
-  res.redirect("/otp3");*/
+  
 });
 router.post("/dealer_login3", function (req, res) {
    email4 = req.body.email;
