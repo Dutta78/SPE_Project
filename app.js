@@ -5,7 +5,7 @@ const session = require("express-session");
 
 const mongoose = require("mongoose");
 
-const port = 8001;
+const port = 3005;
 
 const path = require("path");
 //=======
@@ -40,12 +40,16 @@ var driver_experience;
 var dealer_email;
 var otp;
 var email4;
+const MONGODB_URI = "mongodb+srv://Dutta78:86eRBKu9TYwhHiH@cluster0.1ogxr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+
 
 mongoose
-  .connect(
-    "mongodb://localhost:27017/goods"    
-  )
-
+  .connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    // useCreateIndex: true,
+    // useFindAndModify:true
+  })
   .then(() => {
     console.log("Database connected successfully");
   })
@@ -57,6 +61,7 @@ const listSchema = new mongoose.Schema({
   state: { type: String, required: true },
   city: { type: [String] },
 });
+
 const detailschema = {
   driver_name: String,
   driver_age: String,
@@ -76,8 +81,10 @@ const detailschema = {
   city3: String,
   // companypassword:String,
 };
+
 const Driver = mongoose.model("Driver", detailschema);
 const Driver2 = mongoose.model("Driver2", detailschema);
+
 var drivers=[];
 var fdealers=[];
 const getListDrivers = async () => {
@@ -118,8 +125,8 @@ const dealerSchema = new mongoose.Schema({
   natureOfMaterial: { type: String, required: true },
   weightOfMaterial: { type: String, required: true },
   quantity: { type: String, required: true },
-  city: { type: String, required: true },
-  state: { type: String, required: true },
+  city: { type: String, required: true},
+  state: { type: String, required: true},
   email: { type: String, required: true },
   password: { type: String, required: true },
 });
@@ -451,11 +458,7 @@ router.post("/driver_login3", function (req, res) {
   var otp2 = otp.toString();
   sessionId = req.session;
   sessionId.tempDriverEmail=email;
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 5330824c28247f7d4cd7c765779145b82fae2022
 });
 router.post("/dealer_login3", function (req, res) {
    email4 = req.body.email;
