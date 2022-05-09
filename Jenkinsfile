@@ -43,17 +43,10 @@ pipeline{
 					sh "docker rmi sanandansharma/node_project:latest"
 				}
 			}
-		stage('Ansible Deploy') {
-				steps {
-					ansiblePlaybook becomeUser: 'null',
-					colorized: true,
-					installation: 'Ansible',
-					inventory: 'inventory',
-					playbook: 'playbook.yml',
-
-					sudoUser: 'null',
-					vaultCredentialsId: 'fintrack-ansible-vault-password'
-				}
-			}
+		stage('Deploy and Run Image'){
+            steps {
+                ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'playbook.yml', sudoUser: null
+            }
+        }
     }
 }
