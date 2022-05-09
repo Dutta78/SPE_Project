@@ -3,7 +3,7 @@ pipeline{
     environment{
         
         DOCKERHUB_REGISTRY="sanandansharma/node_project"
-        DOCKERHUB_CREDENTIALS=credentials('dockerhub-id')
+        DOCKERHUB_CREDENTIALS=credentials('dockerhub')
         
     }
     agent any 
