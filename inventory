@@ -1,2 +1,2 @@
-[production]
+[ubuntu]
 172.18.0.1 ansible_user=san
