@@ -15,6 +15,6 @@ RUN npm install --silent
 COPY . .
 
 # Exports
-EXPOSE 3005
+EXPOSE 8000
 
 CMD ["npm","start"]
