@@ -33,7 +33,7 @@ pipeline{
         
         stage('Push Docker Image to Docker Hub') {
 			  steps {
-			       withDockerRegistry([ credentialsId: "dockerhub-id", url: "" ]){
+			       withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
 			    sh "docker push sanandansharma/node_project:latest"
 			       }
 			  }
