@@ -10,14 +10,14 @@ pipeline{
     
     stages{
         
-    stage('git pull'){
+  /*  stage('git pull'){
        
         steps{
             git url:'https://github.com/Dutta78/SPE_Project.git',
             branch:'master',
             credentialsId:'github'
         }
-        }
+        }*/
         
         stage('build docker image'){
             steps{
