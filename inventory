@@ -1,2 +1,2 @@
 [ubuntu]
-10.0.2.15 ansible_user=san
+172.16.134.234 ansible_user=arjun
