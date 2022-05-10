@@ -10,4 +10,4 @@
     - name: pull docker image
       shell: docker pull sanandansharma/spe_image
     - name: running container
-      shell: docker run -it -d sanandansharma/spe_image /bin/bash
+      shell: docker run -it -p 8000:8000 -d sanandansharma/spe_image /bin/bash
