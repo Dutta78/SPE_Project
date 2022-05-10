@@ -2,7 +2,7 @@ pipeline{
     
     environment{
         
-        DOCKERHUB_REGISTRY="sanandansharma/spe_image"
+        DOCKERHUB_REGISTRY="dutta78/spe_project"
         DOCKERHUB_CREDENTIALS=credentials('dockerhub')
         
     }
@@ -21,7 +21,7 @@ pipeline{
         
         stage('build docker image'){
             steps{
-                sh "docker build -t sanandansharma/spe_image:latest ."
+                sh "docker build -t dutta78/spe_project:latest ."
                 
             }
         }
@@ -34,13 +34,13 @@ pipeline{
         stage('Push Docker Image to Docker Hub') {
 			  steps {
 			       withDockerRegistry([ credentialsId: "dockerhub", url: "" ]){
-			    sh "docker push sanandansharma/spe_image:latest"
+			    sh "docker push dutta78/spe_project:latest"
 			       }
 			  }
 			}
 		stage('Removing Docker Images from Local') {
 				steps {
-					sh "docker rmi sanandansharma/spe_image:latest"
+					sh "docker rmi dutta78/spe_project:latest"
 				}
 			}
 		stage('Deploy and Run Image'){
