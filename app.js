@@ -4,7 +4,8 @@ const cors = require("cors");
 const session = require("express-session");
 
 const mongoose = require("mongoose");
-
+const morgan = require('morgan')
+var fs = require('fs')
 const port = 8000;
 
 const path = require("path");
@@ -81,7 +82,9 @@ const detailschema = {
   city3: String,
   // companypassword:String,
 };
-
+app.use(morgan('common', {
+  stream: fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+}));
 const Driver = mongoose.model("Driver", detailschema);
 const Driver2 = mongoose.model("Driver2", detailschema);
 
