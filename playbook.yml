@@ -10,4 +10,4 @@
     - name: pull docker image
       shell: docker pull dutta78/spe_project
     - name: running container
-      shell: docker run -it -d 8000:8000 dutta78/spe_project /bin/bash
+      shell: docker run -it -p 8000:8000 -d dutta78/spe_project /bin/bash
