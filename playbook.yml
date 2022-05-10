@@ -8,6 +8,6 @@
         state: started
 
     - name: pull docker image
-      shell: docker pull sanandansharma/spe_image
+      shell: docker pull dutta78/spe_project
     - name: running container
-      shell: docker run -it -d sanandansharma/spe_image /bin/bash
+      shell: docker run -it -d dutta78/spe_project /bin/bash
