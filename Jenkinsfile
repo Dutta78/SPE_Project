@@ -9,16 +9,6 @@ pipeline{
     agent any 
     
     stages{
-        
-  /*  stage('git pull'){
-       
-        steps{
-            git url:'https://github.com/Dutta78/SPE_Project.git',
-            branch:'master',
-            credentialsId:'github'
-        }
-        }*/
-        
         stage('build docker image'){
             steps{
                 sh "docker build -t dutta78/spe_project:latest ."
